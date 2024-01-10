@@ -3,6 +3,8 @@ const Customer = require("../models/userModel");
 const bcrypt = require('bcryptjs');
 
 
+
+
 const login = async (req, res, next) => {
     try {
         const { email, password } = req.body;
@@ -28,6 +30,7 @@ const login = async (req, res, next) => {
         res.status(500).json({ message: 'Error during login', error: err.message });
       }
 };
+
 
 
 const signup = async (req, res) => {
