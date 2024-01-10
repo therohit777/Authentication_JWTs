@@ -9,10 +9,8 @@ const PORT = 8000;
 
 
 app.use(express.json());
-// app.use("/api/users", userRoutes);
+app.use("/api/users", userRoutes);
 
-app.use('/.netlify/functions/server', userRoutes); 
-app.use('/', (req, res) => res.sendFile(path.join(__dirname, './index.html')));
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
